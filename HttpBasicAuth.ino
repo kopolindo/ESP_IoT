@@ -4,8 +4,8 @@
 #include <ESP8266WebServer.h>
 #include "foobar.h"
 
-const char* ssid = "NaNaNaNBATLAN";
-const char* password = "hvB3uIg6QqCntJsg";
+const char* ssid = "****";
+const char* password = "****";
 
 ESP8266WebServer server(80);
 
