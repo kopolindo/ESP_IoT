@@ -1,5 +1,6 @@
 # Configuration files
 *.conf
+conf.h
 
 # Prerequisites
 *.d

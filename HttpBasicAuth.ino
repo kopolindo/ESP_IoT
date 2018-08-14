@@ -3,9 +3,10 @@
 #include <ArduinoOTA.h>
 #include <ESP8266WebServer.h>
 #include "foobar.h"
+#include "conf.h"
 
-const char* ssid = "****";
-const char* password = "****";
+const char* ssid = SSID;
+const char* password = SECRET;
 
 ESP8266WebServer server(80);
 
