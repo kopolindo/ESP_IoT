@@ -5,18 +5,12 @@
 #include "API.h"
 #include "conf.h"
 
-const char* ssid = SSID;
-const char* password = SECRET;
-
 ESP8266WebServer server(80);
-
-const char* www_username = "admin";
-const char* www_password = "esp8266";
 
 void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
+  WiFi.begin(SSID, SECRET);
   if (WiFi.waitForConnectResult() != WL_CONNECTED) {
     Serial.println("WiFi Connect Failed! Rebooting...");
     delay(1000);
@@ -25,7 +19,7 @@ void setup() {
   ArduinoOTA.begin();
 
   server.on("/", []() {
-    if (!server.authenticate(www_username, www_password)) {
+    if (!server.authenticate(USER, PASS)) {
       return server.requestAuthentication();
     }
     //server.send(200, "text/plain", "Login OK");
