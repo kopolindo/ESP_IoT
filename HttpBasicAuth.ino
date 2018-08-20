@@ -18,13 +18,8 @@ void setup() {
   }
   ArduinoOTA.begin();
 
-  server.on("/", []() {
-    if (!server.authenticate(USER, PASS)) {
-      return server.requestAuthentication();
-    }
-    //server.send(200, "text/plain", "Login OK");
-    hello(&server);
-  });
+  server.on("/",      root);
+  server.on("/test",  test);
   server.begin();
 
   Serial.print("Open http://");
